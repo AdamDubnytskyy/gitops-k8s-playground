@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4.1.1
     - name: Build the Docker image
-      run: docker build . --file dockerfile --tag broox/hello-world-py-app:$(date + %s)
+      run: docker build . --file dockerfile --tag broox/hello-world-py-app:${GITHUB_SHA}
