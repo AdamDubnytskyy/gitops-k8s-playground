@@ -13,3 +13,18 @@
 - Helm
 - ArgoCD
 - FluxCD
+
+### Flux CD
+Bootstrap Flux to repository. Command below connects your Kubernetes cluster to the repository and sets up the necessary components for continuous synchronization:
+```
+flux bootstrap github \
+--owner=[GITHUB_USERNAME] \
+--repository=[repository_name] \
+--path= ./deployment/base \
+--personal
+```
+
+To verify how the resources of the flux-system namespace have been deployed within the respective namespace:
+```
+kubectl get all -n flux-system
+```
